@@ -145,7 +145,7 @@ export default function Signup() {
 
           <button
             onClick={() =>
-              (window.location.href = `http://localhost:5001/api/auth/google?role=${activeRole}`)
+              (window.location.href = ` https://care24-backend.onrender.com/api/auth/google?role=${activeRole}`)
             }
             className="cursor-pointer w-full flex items-center justify-center gap-3 border border-gray-200 rounded-xl py-3 text-sm font-medium text-gray-800 hover:border-green-600 hover:shadow-md transition-all mb-5"
           >

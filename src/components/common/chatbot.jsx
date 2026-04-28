@@ -40,10 +40,13 @@ export default function Chatbot() {
       setInput("");
       setLoading(true);
 
-      const response = await axios.post("http://127.0.0.1:8000/analyze-image", {
-        img_url: selectedImage.url,
-        query: input.trim() || "",
-      });
+      const response = await axios.post(
+        "https://care24-rag-service.onrender.com/analyze-image",
+        {
+          img_url: selectedImage.url,
+          query: input.trim() || "",
+        },
+      );
 
       saveMessages(patientId, "bot", response.data.answer);
       setMessages((prev) => [
@@ -77,7 +80,7 @@ export default function Chatbot() {
       formData.append("query", input.trim() || "");
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/analyze-pdf",
+        "https://care24-rag-service.onrender.com/analyze-pdf",
         formData,
       );
 
@@ -101,12 +104,18 @@ export default function Chatbot() {
     ]);
     setInput("");
     setLoading(true);
-    const response = await axios.post("http://127.0.0.1:8000/ask", {
-      query: userMsg,
-chat_history: [...messages, { role: "user", text: userMsg, type: "text" }],
-      user_id: patientId,
-      user_name: Username,
-    });
+    const response = await axios.post(
+      "https://care24-rag-service.onrender.com/ask",
+      {
+        query: userMsg,
+        chat_history: [
+          ...messages,
+          { role: "user", text: userMsg, type: "text" },
+        ],
+        user_id: patientId,
+        user_name: Username,
+      },
+    );
     saveMessages(patientId, "bot", response.data.answer).then((data) => {});
     setMessages((prev) => [
       ...prev,
@@ -185,7 +194,8 @@ chat_history: [...messages, { role: "user", text: userMsg, type: "text" }],
             <img
               src={msg.text}
               alt="uploaded"
-              loading="lazy" decoding="async"
+              loading="lazy"
+              decoding="async"
               className="cursor-pointer max-w-[220px] max-h-[200px] w-auto h-auto object-cover rounded-xl"
             />
           ) : (
@@ -215,8 +225,6 @@ chat_history: [...messages, { role: "user", text: userMsg, type: "text" }],
 
   return (
     <>
-      
-
       <div className="fixed inset-0 pointer-events-none z-50">
         <Draggable
           nodeRef={dragref}
@@ -249,7 +257,6 @@ chat_history: [...messages, { role: "user", text: userMsg, type: "text" }],
             transition={{ duration: 0.25, ease: "easeOut" }}
             className="fixed bottom-24 right-5  w-[460px] h-[420px] bg-white rounded-2xl flex flex-col overflow-hidden z-50 border border-gray-200"
           >
-            
             <div className="bg-[#0b7d6e] text-white px-4 py-3 flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-green-300 animate-pulse"></div>
               <span
@@ -271,7 +278,6 @@ chat_history: [...messages, { role: "user", text: userMsg, type: "text" }],
               </span>
             </div>
 
-            
             <div
               ref={messegeref}
               className="flex-1 p-4 overflow-y-auto scrollbar-hide space-y-3 bg-gray-50"
@@ -302,7 +308,8 @@ chat_history: [...messages, { role: "user", text: userMsg, type: "text" }],
                 <img
                   src={selectedImage.url}
                   alt="preview"
-                  loading="lazy" decoding="async"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
                 <button
@@ -334,7 +341,6 @@ chat_history: [...messages, { role: "user", text: userMsg, type: "text" }],
               </div>
             )}
 
-            
             <div className=" relative p-3 border-t bg-white flex gap-2">
               <div className="relative">
                 <label className="flex items-center justify-center w-8 h-8 rounded-full cursor-pointer hover:bg-gray-100 transition-colors">
@@ -375,4 +381,3 @@ chat_history: [...messages, { role: "user", text: userMsg, type: "text" }],
     </>
   );
 }
-

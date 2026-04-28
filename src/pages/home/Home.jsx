@@ -25,7 +25,7 @@ import Navbar from "../../components/common/Navbar";
 
 const Home = () => {
   const scrollRef = useRef(null);
-  const IMAGE_BASE = "http://localhost:5001";
+  const IMAGE_BASE = " https://care24-backend.onrender.com";
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });

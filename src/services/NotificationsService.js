@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5001/api/notifications";
+const API_URL = " https://care24-backend.onrender.com/api/notifications";
 
 const api = axios.create({
   baseURL: API_URL,

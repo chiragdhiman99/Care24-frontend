@@ -18,7 +18,7 @@ import { toast } from "sonner";
 
 const todayStr = () => new Date().toISOString().split("T")[0];
 
-const IMAGE_BASE = "http://localhost:5001";
+const IMAGE_BASE = " https://care24-backend.onrender.com";
 
 const getInitials = (name) => {
   return name

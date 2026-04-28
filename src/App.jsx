@@ -33,7 +33,7 @@ const ContactUs = lazy(() => import("./pages/ContactUs"));
 const AboutUs = lazy(() => import("./pages/AboutUs"));
 const NotFound = lazy(() => import("./PageNotFound"));
 
-const socket = io("http://localhost:5001");
+const socket = io(" https://care24-backend.onrender.com");
 
 function App() {
   useEffect(() => {
