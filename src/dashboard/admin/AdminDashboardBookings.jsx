@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { getAllBookings } from "../../services/BookingService";
+import { getAllBookings } from "../../services/bookingservice";
 
 function BookingDetailModal({ booking, onClose }) {
   if (!booking) return null;

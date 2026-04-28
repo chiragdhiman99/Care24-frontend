@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { getAllBookings } from "../../services/BookingService";
+import { getAllBookings } from "../../services/bookingservice";
 import { getCaregivers } from "../../services/CaregiverService";
 import { getAllUsers } from "../../services/AuthService";
 import { use, useEffect, useState } from "react";
