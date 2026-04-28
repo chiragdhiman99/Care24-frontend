@@ -6,6 +6,16 @@ const api = axios.create({
   baseURL: API_URL,
   withCredentials: true,
 });
+
+app.use.interceptors.request.use((config) => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
+
 export const registerUser = async (userdata) => {
   try {
     const { data } = await api.post("/register", userdata);
