@@ -13,7 +13,7 @@ export default function CaregiverDetailModal({
   if (!caregiver) return null;
 
   const isPending = caregiver.verificationStatus === "pending";
-  const IMAGE_BASE = " https://care24-backend.onrender.com";
+  const IMAGE_BASE = "https://care24-backend.onrender.com";
 
   const docs = [
     {

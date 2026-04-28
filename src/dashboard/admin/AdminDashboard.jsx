@@ -60,7 +60,7 @@ export default function AdminDashboard() {
     };
     fetchNotifs();
 
-    const socket = io(" https://care24-backend.onrender.com");
+    const socket = io("https://care24-backend.onrender.com");
     socket.on("newBooking", (data) => {
       setNotifications((prev) => [{ ...data, isRead: false }, ...prev]);
     });

@@ -7,7 +7,7 @@ import Navbar from "../components/common/Navbar";
 import { io } from "socket.io-client";
 import { Search } from "lucide-react";
 
-const socket = io(" https://care24-backend.onrender.com");
+const socket = io("https://care24-backend.onrender.com");
 
 const FILTERS = [
   "all",
@@ -38,7 +38,7 @@ const getBadge = (caregiver) => {
 };
 
 const CaregiverCard = ({ caregiver, index }) => {
-  const IMAGE_BASE = " https://care24-backend.onrender.com";
+  const IMAGE_BASE = "https://care24-backend.onrender.com";
   const navigate = useNavigate();
   const badge = getBadge(caregiver);
 

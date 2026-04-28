@@ -27,7 +27,7 @@ const PaymentSection = ({}) => {
   const [paying, setPaying] = useState(false);
   const [paid, setPaid] = useState(false);
 
-  const IMAGE_BASE = " https://care24-backend.onrender.com";
+  const IMAGE_BASE = "https://care24-backend.onrender.com";
 
   const genbookingid = () => {
     const date = new Date().toISOString().slice(0, 10).replace(/-/g, "");

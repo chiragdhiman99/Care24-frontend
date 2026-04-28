@@ -41,7 +41,7 @@ export default function MessagesTab({ caregiverId, onUnreadChange }) {
   const [previewUrl, setPreviewUrl] = useState(null);
   const [totalunread, setTotalUnread] = useState(0);
 
-  const IMAGE_BASE = " https://care24-backend.onrender.com";
+  const IMAGE_BASE = "https://care24-backend.onrender.com";
 
   const [showEmojis, setShowEmojis] = useState(false);
 
@@ -103,7 +103,7 @@ export default function MessagesTab({ caregiverId, onUnreadChange }) {
   }, []);
 
   const handledownload = async (url) => {
-    const fileName = url.replace(" https://care24-backend.onrender.com/uploads/", "");
+    const fileName = url.replace("https://care24-backend.onrender.com/uploads/", "");
     const response = await fetch(url);
     const blob = await response.blob();
     const link = document.createElement("a");

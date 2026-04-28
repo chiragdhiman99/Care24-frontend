@@ -81,7 +81,7 @@ export default function MessagesTab({ onUnreadChange }) {
 
   const fileInputRef = useRef(null);
 
-  const IMAGE_BASE = " https://care24-backend.onrender.com";
+  const IMAGE_BASE = "https://care24-backend.onrender.com";
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -124,7 +124,7 @@ export default function MessagesTab({ onUnreadChange }) {
   }, [userId]);
 
   const handledownload = async (url) => {
-    const fileName = url.replace(" https://care24-backend.onrender.com/uploads/", "");
+    const fileName = url.replace("https://care24-backend.onrender.com/uploads/", "");
     const response = await fetch(url);
     const blob = await response.blob();
     const link = document.createElement("a");

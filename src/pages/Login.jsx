@@ -63,7 +63,7 @@ export default function Login() {
   };
 
   const handleGoogle = () => {
-    window.location.href = " https://care24-backend.onrender.com/api/auth/google";
+    window.location.href = "https://care24-backend.onrender.com/api/auth/google";
   };
 
   return (
