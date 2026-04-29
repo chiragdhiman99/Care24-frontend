@@ -84,6 +84,7 @@ export default function Signup() {
       setLoading(true);
       await new Promise((resolve) => setTimeout(resolve, 3000));
       const response = await registerUser(userData);
+      localStorage.setItem("token", response.token);
       toast.success("Signup successful!");
       setFormData({
         firstName: "",

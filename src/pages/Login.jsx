@@ -53,6 +53,7 @@ export default function Login() {
       setLoading(true);
       await new Promise((resolve) => setTimeout(resolve, 1000));
       const data = await loginUser(userdata);
+      localStorage.setItem("token", data.token);
       setLoading(false);
       toast.success("Login successful!");
       window.location.href = "/caregiver-dashboard";
