@@ -119,7 +119,7 @@ export default function Booking() {
 
   const handleReviewBooking = async () => {
     try {
-      await verifyUser();
+      await getMe();
       navigate("/payment", {
         state: {
           caregiver: bookingdata?.name,

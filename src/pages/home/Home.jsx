@@ -67,7 +67,7 @@ const Home = () => {
               <motion.div
                 variants={fadeUp}
                 custom={0}
-                className="inline-flex items-center gap-2 bg-[#E1F5EE] text-[#0B7D6E] px-3 sm:px-4 py-1.5 rounded-full text-xs font-medium mb-5 sm:mb-6"
+                className="inline-flex items-center gap-2 bg-[#E1F5EE] text-[#0B7D6E] px-3 sm:px-4 py-1.5 rounded-full text-xs font-medium mb-6 sm:mb-6"
               >
                 <span className="w-2 h-2 rounded-full bg-[#1D9E75]" />
                 Trusted by 5,000+ Families Across India

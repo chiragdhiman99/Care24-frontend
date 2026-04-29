@@ -36,9 +36,12 @@ const PaymentSection = ({}) => {
   };
 
   const handlePay = async () => {
-    const { data } = await axios.post("/api/payment/create-order", {
-      amount: 500,
-    });
+    const { data } = await axios.post(
+      "https://care24-backend.onrender.com/api/payment/create-order",
+      {
+        amount: 500,
+      },
+    );
     const order = data.order;
 
     const options = {
@@ -53,32 +56,35 @@ const PaymentSection = ({}) => {
         color: "#2baf8e",
       },
       handler: async function (response) {
-        const { data } = await axios.post("/api/payment/verify-payment", {
-          razorpay_order_id: response.razorpay_order_id,
-          razorpay_payment_id: response.razorpay_payment_id,
-          razorpay_signature: response.razorpay_signature,
-          userId: bookingdata.userId,
-          caregiverId: bookingdata.caregiverId,
-          patientAge: bookingdata.patientAge,
-          patientGender: bookingdata.patientGender,
-          address: bookingdata.address,
-          notes: bookingdata.notes,
-          toEmail: bookingdata.email,
-          patientName: bookingdata.patient,
-          caregiverExperience: bookingdata.experience,
-          caregiverRating: bookingdata.caregiverRating,
-          caregiverReviews: bookingdata.caregiverReviews,
-          caregiverAvailable: bookingdata.caregiverAvailable,
-          caregiverName: bookingdata.caregiver,
-          service: bookingdata.service,
-          date: bookingdata.date,
-          startTime: bookingdata.startTime,
-          duration: bookingdata.duration,
-          totalAmount: bookingdata.amount,
-          bookingId: genbookingid(),
-          method: paymentMethods.find((m) => m.id === selected)?.label,
-          transactionId: response.razorpay_payment_id,
-        });
+        const { data } = await axios.post(
+          "https://care24-backend.onrender.com/api/payment/verify-payment",
+          {
+            razorpay_order_id: response.razorpay_order_id,
+            razorpay_payment_id: response.razorpay_payment_id,
+            razorpay_signature: response.razorpay_signature,
+            userId: bookingdata.userId,
+            caregiverId: bookingdata.caregiverId,
+            patientAge: bookingdata.patientAge,
+            patientGender: bookingdata.patientGender,
+            address: bookingdata.address,
+            notes: bookingdata.notes,
+            toEmail: bookingdata.email,
+            patientName: bookingdata.patient,
+            caregiverExperience: bookingdata.experience,
+            caregiverRating: bookingdata.caregiverRating,
+            caregiverReviews: bookingdata.caregiverReviews,
+            caregiverAvailable: bookingdata.caregiverAvailable,
+            caregiverName: bookingdata.caregiver,
+            service: bookingdata.service,
+            date: bookingdata.date,
+            startTime: bookingdata.startTime,
+            duration: bookingdata.duration,
+            totalAmount: bookingdata.amount,
+            bookingId: genbookingid(),
+            method: paymentMethods.find((m) => m.id === selected)?.label,
+            transactionId: response.razorpay_payment_id,
+          },
+        );
         if (data.success) {
           navigate("/payment-confirmation", {
             state: {
