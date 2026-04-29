@@ -121,6 +121,15 @@ export default function UserDashboard() {
   }, [userId]);
 
   useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get("token");
+    if (token) {
+      localStorage.setItem("token", token);
+      window.history.replaceState({}, "", "/dashboard");
+    }
+  }, []);
+
+  useEffect(() => {
     socket.on("bookingCancelled", (data) => {
       setNotifications((prev) => [data, ...prev]);
       setUnreadCount((prev) => prev + 1);
@@ -306,7 +315,8 @@ export default function UserDashboard() {
               src={userData?.photo}
               referrerPolicy="no-referrer"
               alt="profile"
-              loading="lazy" decoding="async"
+              loading="lazy"
+              decoding="async"
               className="w-9 h-9 rounded-full object-cover flex-shrink-0"
             />
           ) : (
@@ -516,7 +526,8 @@ export default function UserDashboard() {
                 src={userData.photo}
                 referrerPolicy="no-referrer"
                 alt="profile"
-                loading="lazy" decoding="async"
+                loading="lazy"
+                decoding="async"
                 className="w-9 h-9 rounded-full object-cover flex-shrink-0"
                 onError={(e) => {
                   e.target.style.display = "none";
