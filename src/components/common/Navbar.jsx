@@ -31,7 +31,7 @@ const Navbar = () => {
         setRole(data.role);
       })
       .catch(() => setToken(false));
-  }, []);
+  }, [location]);
 
   return (
     <nav
