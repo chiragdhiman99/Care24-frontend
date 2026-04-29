@@ -373,9 +373,7 @@ export default function MessagesTab({ caregiverId, onUnreadChange }) {
             <p className="font-bold text-gray-700 text-base">
               No chat selected
             </p>
-            <p className="text-gray-400 text-sm mt-1">
-              Select a caregiver from the left to start a conversation
-            </p>
+           
           </div>
         ) : (
           <>
