@@ -15,7 +15,7 @@ const Caregivers = lazy(() => import("./pages/Caregiver"));
 const CaregiverDetail = lazy(
   () => import("./components/caregiver/CaregiverDetail"),
 );
-import UserDashboard from "./dashboard/user/UserDashboard";
+const UserDashboard = lazy(() => import("./dashboard/user/UserDashboard"));
 const Booking = lazy(() => import("./components/booking/BookingCard"));
 const PaymentSection = lazy(
   () => import("./components/booking/PaymentSection"),
