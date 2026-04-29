@@ -74,6 +74,7 @@ export default function SettingsTab() {
     try {
       await deleteUser(userId);
       await logout();
+      localStorage.clear();
       toast.success("Account deleted successfully.");
       window.location.href = "/";
     } catch (error) {
@@ -170,7 +171,8 @@ export default function SettingsTab() {
             <img
               src={userData.photo}
               alt={userData.name}
-              loading="lazy" decoding="async"
+              loading="lazy"
+              decoding="async"
               className="w-16 h-16 rounded-full object-cover flex-shrink-0"
             />
           ) : (
