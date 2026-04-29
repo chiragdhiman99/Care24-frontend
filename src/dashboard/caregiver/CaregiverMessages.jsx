@@ -103,7 +103,10 @@ export default function MessagesTab({ caregiverId, onUnreadChange }) {
   }, []);
 
   const handledownload = async (url) => {
-    const fileName = url.replace("https://care24-backend.onrender.com/uploads/", "");
+    const fileName = url.replace(
+      "https://care24-backend.onrender.com/uploads/",
+      "",
+    );
     const response = await fetch(url);
     const blob = await response.blob();
     const link = document.createElement("a");
@@ -357,10 +360,10 @@ export default function MessagesTab({ caregiverId, onUnreadChange }) {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="flex-1 bg-white rounded-2xl -mt-3 flex-col overflow-hidden"
+        className={`flex-1 bg-white rounded-2xl -mt-3 flex-col overflow-hidden ${selected ? "flex" : "hidden md:flex"}`}
         style={{
           boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
-          display: selected ? "flex" : "none",
+          display: "none",
         }}
       >
         {!selectedCaregiver ? (
@@ -429,7 +432,8 @@ export default function MessagesTab({ caregiverId, onUnreadChange }) {
                       <div className="relative">
                         <img
                           src={`${IMAGE_BASE}${m.fileUrl}`}
-                          loading="lazy" decoding="async"
+                          loading="lazy"
+                          decoding="async"
                           className="w-40 h-40 rounded-xl object-cover"
                         />
                         <a
@@ -552,7 +556,8 @@ export default function MessagesTab({ caregiverId, onUnreadChange }) {
                   <div className="relative w-20 h-20">
                     <img
                       src={previewUrl}
-                      loading="lazy" decoding="async"
+                      loading="lazy"
+                      decoding="async"
                       className="w-20 h-20 rounded-xl object-cover border-2 border-[#0D6B5E]"
                     />
 
