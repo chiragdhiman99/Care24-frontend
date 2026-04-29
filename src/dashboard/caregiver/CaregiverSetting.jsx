@@ -64,6 +64,7 @@ export default function SettingsTab() {
     try {
       await deleteUser(userId);
       await logout();
+      localStorage.clear();
       toast.success("Account deleted successfully.");
       window.location.href = "/";
     } catch (error) {

@@ -121,15 +121,6 @@ export default function UserDashboard() {
   }, [userId]);
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const token = params.get("token");
-    if (token) {
-      localStorage.setItem("token", token);
-      window.history.replaceState({}, "", "/dashboard");
-    }
-  }, []);
-
-  useEffect(() => {
     socket.on("bookingCancelled", (data) => {
       setNotifications((prev) => [data, ...prev]);
       setUnreadCount((prev) => prev + 1);
@@ -155,6 +146,13 @@ export default function UserDashboard() {
   };
 
   useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get("token");
+    if (token) {
+      localStorage.setItem("token", token);
+      window.history.replaceState({}, "", "/dashboard");
+    }
+
     getMe()
       .then((data) => {
         setUserId(data.userId);
