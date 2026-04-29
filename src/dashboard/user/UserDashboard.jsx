@@ -113,21 +113,6 @@ export default function UserDashboard() {
   const [showNotifications, setShowNotifications] = useState(false);
   const [unreadCount, setUnreadCount] = useState(0);
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-[#F5F3EE]">
-        <div className="w-10 h-10 border-4 border-teal-500 border-t-transparent rounded-full animate-spin" />
-      </div>
-    );
-  }
 
   useEffect(() => {
     socket.on("connect", () => {
