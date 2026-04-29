@@ -39,7 +39,7 @@ const PaymentSection = ({}) => {
     const { data } = await axios.post(
       "https://care24-backend.onrender.com/api/payment/create-order",
       {
-        amount: 500,
+        amount: bookingdata.amount,
       },
     );
     const order = data.order;
