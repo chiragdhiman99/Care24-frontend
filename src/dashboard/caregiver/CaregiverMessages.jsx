@@ -363,7 +363,6 @@ export default function MessagesTab({ caregiverId, onUnreadChange }) {
         className={`flex-1 bg-white rounded-2xl -mt-3 flex-col overflow-hidden ${selected ? "flex" : "hidden md:flex"}`}
         style={{
           boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
-          display: "none",
         }}
       >
         {!selectedCaregiver ? (
