@@ -100,9 +100,7 @@ export default function Booking() {
       .then((data) => {
         setUserId(data.userId);
       })
-      .catch(() => {
-        toast.error("You are not logged in.");
-      });
+      .catch(() => {});
   }, []);
 
   useEffect(() => {
