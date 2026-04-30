@@ -237,7 +237,7 @@ export default function Chatbot() {
           <div
             ref={dragref}
             onClick={(e) => handleToggle(e)}
-            onTouchEnd={(e)=>handleToggle(e)}
+            onTouchEnd={(e) => handleToggle(e)}
             className="pointer-events-auto w-fit cursor-grab active:cursor-grabbing bg-[#0b7d6e] p-4 rounded-2xl rounded-tl-none shadow-lg"
           >
             <div className="relative w-9 h-9 bg-white rounded-xl rounded-tl-none">
@@ -257,7 +257,7 @@ export default function Chatbot() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.85, y: 80 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="fixed bottom-24 right-5  w-[460px] h-[420px] bg-white rounded-2xl flex flex-col overflow-hidden z-50 border border-gray-200"
+            className="fixed bottom-24 right-2 left-2 md:left-auto md:right-5 w-auto md:w-[460px] h-[75vh] md:h-[420px] bg-white rounded-2xl flex flex-col overflow-hidden z-50 border border-gray-200"
           >
             <div className="bg-[#0b7d6e] text-white px-4 py-3 flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-green-300 animate-pulse"></div>
@@ -278,6 +278,15 @@ export default function Chatbot() {
               <span className="text-xs text-green-200 ml-1 mt-1.5">
                 Medical Assistant
               </span>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setOpen(false);
+                }}
+                className="ml-auto w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30"
+              >
+                ✕
+              </button>
             </div>
 
             <div
