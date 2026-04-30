@@ -304,17 +304,6 @@ This frontend is powered by the **Care24 REST API** — a Node.js + Express + Mo
 
 ---
 
-## 🔮 Roadmap — What's Coming Next
-
-- [ ] 🗓️ **Real-time Availability Calendar** — live slot booking
-- [ ] ⭐ **Review & Rating System** — after-service feedback
-- [ ] 🔔 **Push Notifications** — booking reminders
-- [ ] 📊 **Admin Dashboard** — manage caregivers & bookings
-- [ ] 🌍 **Multi-city Expansion** — more cities, more caregivers
-- [ ] 💬 **In-app Chat** — patient ↔ caregiver messaging
-
-<br/>
-
 ---
 
 ## 🐛 Found a Bug?
