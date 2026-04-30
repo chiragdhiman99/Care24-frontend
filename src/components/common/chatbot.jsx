@@ -4,7 +4,6 @@ import axios from "axios";
 import { getMe } from "../../services/AuthService";
 import { getOrCreateChatbot } from "../../services/ChatbotService";
 import { saveMessages } from "../../services/ChatbotService";
-import Draggable from "react-draggable";
 import ReactMarkdown from "react-markdown";
 import { getuserbyid } from "../../services/AuthService";
 
@@ -130,6 +129,7 @@ export default function Chatbot() {
       name: file.name,
     });
   };
+
   const handleImageUpload = async (file) => {
     const formdata = new FormData();
     formdata.append("file", file);
@@ -159,7 +159,7 @@ export default function Chatbot() {
 
   const handleToggle = (e) => {
     e.stopPropagation();
-    setOpen(!open);
+    setOpen((prev) => !prev);
 
     if (!open) {
       getOrCreateChatbot(patientId).then((data) => {
@@ -208,12 +208,21 @@ export default function Chatbot() {
 
   useEffect(() => {
     const handleclickoutside = (e) => {
-      if (chatref.current && !chatref.current.contains(e.target)) {
+      if (
+        chatref.current &&
+        !chatref.current.contains(e.target) &&
+        dragref.current &&
+        !dragref.current.contains(e.target)
+      ) {
         setOpen(false);
       }
     };
     document.addEventListener("click", handleclickoutside);
-    return () => document.removeEventListener("click", handleclickoutside);
+    document.addEventListener("touchend", handleclickoutside);
+    return () => {
+      document.removeEventListener("click", handleclickoutside);
+      document.removeEventListener("touchend", handleclickoutside);
+    };
   }, []);
 
   useEffect(() => {
@@ -225,30 +234,19 @@ export default function Chatbot() {
 
   return (
     <>
-      <div className="fixed inset-0 pointer-events-none z-50">
-        <Draggable
-          nodeRef={dragref}
-          defaultPosition={{
-            x: window.innerWidth - 120,
-            y: window.innerHeight - 90,
-          }}
-          enableUserSelectHack={false}
-        >
-          <div
-            ref={dragref}
-            onClick={(e) => handleToggle(e)}
-            onTouchEnd={(e) => {
-              e.preventDefault();
-              handleToggle(e);
-            }}
-            className="pointer-events-auto w-fit cursor-grab active:cursor-grabbing bg-[#0b7d6e] p-4 rounded-2xl rounded-tl-none shadow-lg"
-          >
-            <div className="relative w-9 h-9 bg-white rounded-xl rounded-tl-none">
-              <div className="absolute h-[3px] top-3 left-2 rounded-full w-5 bg-[#0b7d6e]"></div>
-              <div className="absolute h-[3px] top-5 left-2 rounded-full w-4 bg-[#0b7d6e]"></div>
-            </div>
-          </div>
-        </Draggable>
+      <div
+        ref={dragref}
+        onClick={handleToggle}
+        onTouchEnd={(e) => {
+          e.preventDefault();
+          handleToggle(e);
+        }}
+        className="fixed bottom-6 right-5 z-50 pointer-events-auto w-fit cursor-pointer bg-[#0b7d6e] p-4 rounded-2xl rounded-tl-none shadow-lg active:scale-95 transition-transform"
+      >
+        <div className="relative w-9 h-9 bg-white rounded-xl rounded-tl-none">
+          <div className="absolute h-[3px] top-3 left-2 rounded-full w-5 bg-[#0b7d6e]"></div>
+          <div className="absolute h-[3px] top-5 left-2 rounded-full w-4 bg-[#0b7d6e]"></div>
+        </div>
       </div>
 
       {open && (
@@ -299,7 +297,7 @@ export default function Chatbot() {
               {messages.length === 0 && (
                 <div className="text-center text-gray-400 text-sm mt-25">
                   <span>Hii 👋</span>
-                  <br></br>
+                  <br />
                   Ask me anything about your health ?
                 </div>
               )}
@@ -328,9 +326,10 @@ export default function Chatbot() {
                 />
                 <button
                   onClick={(e) => {
-                    (e.stopPropagation(), setSelectedImage(null));
+                    e.stopPropagation();
+                    setSelectedImage(null);
                   }}
-                  className="absolute top-1 right-1 bg-red-500 text-white rounded-full w-5 h-5 text-xs flex  cursor-pointer items-center justify-center hover:bg-red-600"
+                  className="absolute top-1 right-1 bg-red-500 text-white rounded-full w-5 h-5 text-xs flex cursor-pointer items-center justify-center hover:bg-red-600"
                 >
                   ✕
                 </button>
@@ -355,7 +354,7 @@ export default function Chatbot() {
               </div>
             )}
 
-            <div className=" relative p-3 border-t bg-white flex gap-2">
+            <div className="relative p-3 border-t bg-white flex gap-2">
               <div className="relative">
                 <label className="flex items-center justify-center w-8 h-8 rounded-full cursor-pointer hover:bg-gray-100 transition-colors">
                   <span className="text-[30px] text-gray-500">+</span>
@@ -380,7 +379,7 @@ export default function Chatbot() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSend()}
                 placeholder="Ask a medical question..."
-                className="flex-1  border   border-gray-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-[#0b7d6e] transition-colors"
+                className="flex-1 border border-gray-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-[#0b7d6e] transition-colors"
               />
               <button
                 onClick={handleSend}
