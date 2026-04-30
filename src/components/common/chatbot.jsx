@@ -10,7 +10,7 @@ import { getuserbyid } from "../../services/AuthService";
 export default function Chatbot() {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([]); 
   const [loading, setLoading] = useState(false);
   const [patientId, setPatientId] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -258,7 +258,7 @@ export default function Chatbot() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.85, y: 80 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="fixed bottom-24 right-2 left-2 md:left-auto md:right-5 w-auto md:w-[460px] h-[75vh] md:h-[420px] bg-white rounded-2xl flex flex-col overflow-hidden z-50 border border-gray-200"
+            className="fixed bottom-24 right-2 left-2 md:left-auto md:right-5 w-auto md:w-[460px] h-[55vh] md:h-[420px] bg-white rounded-2xl flex flex-col overflow-hidden z-50 border border-gray-200"
           >
             <div className="bg-[#0b7d6e] text-white px-4 py-3 flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-green-300 animate-pulse"></div>
