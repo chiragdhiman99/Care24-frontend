@@ -34,7 +34,6 @@ const PaymentSection = ({}) => {
     const uid = uuidv4().split("-")[0].toUpperCase();
     return `CR24-${date}-${uid}`;
   };
-
   const handlePay = async () => {
     const { data } = await axios.post(
       "https://care24-backend.onrender.com/api/payment/create-order",
@@ -56,7 +55,29 @@ const PaymentSection = ({}) => {
         color: "#2baf8e",
       },
       handler: async function (response) {
-        const { data } = await axios.post(
+        navigate("/payment-confirmation", {
+          state: {
+            caregiverName: bookingdata.caregiver,
+            caregiverEmail: bookingdata.caregiverEmail,
+            caregiverLocation: bookingdata.city,
+            caregiverExperience: bookingdata.experience,
+            caregiverTags: bookingdata.specializations,
+            caregiverImage: bookingdata.image,
+            caregiverRating: bookingdata.caregiverRating,
+            caregiverReviews: bookingdata.caregiverReviews,
+            caregiverAvailable: bookingdata.caregiverAvailable,
+            bookingId: genbookingid(),
+            service: bookingdata.service,
+            date: bookingdata.date,
+            patientName: bookingdata.patient,
+            duration: bookingdata.duration,
+            method: paymentMethods.find((m) => m.id === selected)?.label,
+            transactionId: response.razorpay_payment_id,
+            totalAmount: bookingdata.amount,
+          },
+        });
+
+        axios.post(
           "https://care24-backend.onrender.com/api/payment/verify-payment",
           {
             razorpay_order_id: response.razorpay_order_id,
@@ -85,36 +106,13 @@ const PaymentSection = ({}) => {
             transactionId: response.razorpay_payment_id,
           },
         );
-        if (data.success) {
-          navigate("/payment-confirmation", {
-            state: {
-              caregiverName: bookingdata.caregiver,
-              caregiverEmail: bookingdata.caregiverEmail,
-              caregiverLocation: bookingdata.city,
-              caregiverExperience: bookingdata.experience,
-              caregiverTags: bookingdata.specializations,
-              caregiverImage: bookingdata.image,
-              caregiverRating: bookingdata.caregiverRating,
-              caregiverReviews: bookingdata.caregiverReviews,
-              caregiverAvailable: bookingdata.caregiverAvailable,
-              bookingId: genbookingid(),
-              service: bookingdata.service,
-              date: bookingdata.date,
-              patientName: bookingdata.patient,
-              duration: bookingdata.duration,
-
-              method: paymentMethods.find((m) => m.id === selected)?.label,
-              transactionId: response.razorpay_payment_id,
-              totalAmount: bookingdata.amount,
-            },
-          });
-        } else {
-          alert("Payment Failed ❌");
-        }
       },
     };
 
     const rzp1 = new window.Razorpay(options);
+    rzp1.on("modal.ondismiss", function () {
+      setPaying(false);
+    });
     rzp1.open();
   };
 
@@ -138,6 +136,18 @@ const PaymentSection = ({}) => {
 
   const location = useLocation();
   const bookingdata = location.state || {};
+
+  if (paying) {
+    return (
+      <div className="min-h-screen bg-[#f0f7f5] flex flex-col items-center justify-center gap-4">
+        <div className="w-14 h-14 border-4 border-[#2baf8e] border-t-transparent rounded-full animate-spin"></div>
+        <p className="text-lg font-semibold text-gray-700">
+          Processing your payment...
+        </p>
+        <p className="text-sm text-gray-400">Please don't close this window</p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#f0f7f5] font-sans">

@@ -80,7 +80,6 @@ export default function CaregiverDashboard() {
   const [msgUnread, setMsgUnread] = useState(0);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
@@ -221,7 +220,7 @@ export default function CaregiverDashboard() {
           </Link>
         </div>
 
-        <nav className="flex flex-col gap-0 flex-1 relative">
+        <nav className="flex flex-col gap-0 relative">
           <div className="absolute left-[43px] -top-4 bottom-0 flex flex-col items-center z-0">
             <div className="w-2.5 h-2.5 rounded-full bg-white/40 flex-shrink-0" />
             <div className="flex-1 w-[2px] bg-white/20" />
@@ -284,7 +283,7 @@ export default function CaregiverDashboard() {
           onClick={() => setSidebarOpen(false)}
           className="md:hidden absolute top-4 right-4 w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:text-white text-sm"
         >
-            <X className="w-3 h-3" />
+          <X className="w-3 h-3" />
         </button>
       </aside>
 
@@ -349,11 +348,12 @@ export default function CaregiverDashboard() {
 
               {showNotifications && (
                 <motion.div
-                initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                transition={{ duration: 0.2 , ease: "easeInOut" }}
-                 className="absolute -right-15 top-12 w-80 bg-white rounded-2xl border border-gray-100 shadow-xl z-50 overflow-hidden">
+                  initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                  transition={{ duration: 0.2, ease: "easeInOut" }}
+                  className="absolute -right-15 top-12 w-80 bg-white rounded-2xl border border-gray-100 shadow-xl z-50 overflow-hidden"
+                >
                   <div className="px-4 py-3 border-b border-gray-100 flex items-center justify-between">
                     <p className="text-sm font-semibold text-gray-800">
                       Notifications

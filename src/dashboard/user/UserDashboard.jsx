@@ -268,8 +268,8 @@ export default function UserDashboard() {
           </Link>
         </div>
 
-        <nav className="flex flex-col gap-0 flex-1 relative">
-          <div className="absolute left-[43px] -top-4 bottom-12 flex flex-col items-center z-0">
+        <nav className="flex flex-col gap-0 relative">
+          <div className="absolute left-[43px] top-0 bottom-0 flex flex-col items-center z-0">
             <div className="w-2.5 h-2.5 rounded-full bg-white/40 flex-shrink-0" />
             <div className="flex-1 w-[2px] bg-white/20" />
             <div className="w-2.5 h-2.5 rounded-full bg-white/40 flex-shrink-0" />
