@@ -55,29 +55,8 @@ const PaymentSection = ({}) => {
         color: "#2baf8e",
       },
       handler: async function (response) {
-        navigate("/payment-confirmation", {
-          state: {
-            caregiverName: bookingdata.caregiver,
-            caregiverEmail: bookingdata.caregiverEmail,
-            caregiverLocation: bookingdata.city,
-            caregiverExperience: bookingdata.experience,
-            caregiverTags: bookingdata.specializations,
-            caregiverImage: bookingdata.image,
-            caregiverRating: bookingdata.caregiverRating,
-            caregiverReviews: bookingdata.caregiverReviews,
-            caregiverAvailable: bookingdata.caregiverAvailable,
-            bookingId: genbookingid(),
-            service: bookingdata.service,
-            date: bookingdata.date,
-            patientName: bookingdata.patient,
-            duration: bookingdata.duration,
-            method: paymentMethods.find((m) => m.id === selected)?.label,
-            transactionId: response.razorpay_payment_id,
-            totalAmount: bookingdata.amount,
-          },
-        });
-
-        axios.post(
+        const bookingId = genbookingid();
+        await axios.post(
           "https://care24-backend.onrender.com/api/payment/verify-payment",
           {
             razorpay_order_id: response.razorpay_order_id,
@@ -101,11 +80,33 @@ const PaymentSection = ({}) => {
             startTime: bookingdata.startTime,
             duration: bookingdata.duration,
             totalAmount: bookingdata.amount,
-            bookingId: genbookingid(),
+            bookingId,
             method: paymentMethods.find((m) => m.id === selected)?.label,
             transactionId: response.razorpay_payment_id,
           },
         );
+
+        navigate("/payment-confirmation", {
+          state: {
+            caregiverName: bookingdata.caregiver,
+            caregiverEmail: bookingdata.caregiverEmail,
+            caregiverLocation: bookingdata.city,
+            caregiverExperience: bookingdata.experience,
+            caregiverTags: bookingdata.specializations,
+            caregiverImage: bookingdata.image,
+            caregiverRating: bookingdata.caregiverRating,
+            caregiverReviews: bookingdata.caregiverReviews,
+            caregiverAvailable: bookingdata.caregiverAvailable,
+            bookingId,
+            service: bookingdata.service,
+            date: bookingdata.date,
+            patientName: bookingdata.patient,
+            duration: bookingdata.duration,
+            method: paymentMethods.find((m) => m.id === selected)?.label,
+            transactionId: response.razorpay_payment_id,
+            totalAmount: bookingdata.amount,
+          },
+        });
       },
     };
 
