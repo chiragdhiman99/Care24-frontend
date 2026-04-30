@@ -379,7 +379,7 @@ export default function Chatbot() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSend()}
                 placeholder="Ask a medical question..."
-                className="flex-1 border border-gray-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-[#0b7d6e] transition-colors"
+                className="flex-1 border border-gray-200 rounded-xl px-3 py-2 text-base md:text-sm outline-none focus:border-[#0b7d6e] transition-colors"
               />
               <button
                 onClick={handleSend}
