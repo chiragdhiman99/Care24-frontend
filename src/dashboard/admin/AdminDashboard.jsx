@@ -130,7 +130,7 @@ export default function AdminDashboard() {
           </Link>
         </div>
 
-        <nav className="flex flex-col gap-0 flex-1 relative">
+        <nav className="flex flex-col gap-0 relative">
           <div className="absolute left-[43px] -top-4 bottom-12 flex flex-col items-center z-0">
             <div className="w-2.5 h-2.5 rounded-full bg-white/40 flex-shrink-0" />
             <div className="flex-1 w-[2px] bg-white/20" />

@@ -43,7 +43,7 @@ export default function MessagesTab({ onUnreadChange }) {
   const [selectedfile, setSelectedFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
   const [totalUnread, setTotalUnread] = useState(0);
-  const [messagesLoading, setMessagesLoading] = useState(true);
+  const [messagesLoading, setMessagesLoading] = useState(false);
   const navigate = useNavigate();
   const emojis = [
     "😊",
@@ -197,6 +197,7 @@ export default function MessagesTab({ onUnreadChange }) {
 
   useEffect(() => {
     if (!selectedCaregiver) return;
+    setMessagesLoading(true);
 
     socket.emit("joinconversation", selectedCaregiver.conversationId);
     socket.emit("markseen", selectedCaregiver.conversationId);
@@ -279,7 +280,7 @@ export default function MessagesTab({ onUnreadChange }) {
     return () => socket.off("newmessage");
   }, [selectedCaregiver]);
 
-  if (messagesLoading) {
+  if (messagesLoading && caregiversData == null) {
     return (
       <div className="flex items-center justify-center h-[calc(100vh-160px)]">
         <div className="w-10 h-10 border-4 border-[#0D6B5E] border-t-transparent rounded-full animate-spin" />
