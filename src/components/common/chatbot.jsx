@@ -232,10 +232,12 @@ export default function Chatbot() {
             x: window.innerWidth - 120,
             y: window.innerHeight - 90,
           }}
+          enableUserSelectHack={false}
         >
           <div
             ref={dragref}
             onClick={(e) => handleToggle(e)}
+            onTouchEnd={(e)=>handleToggle(e)}
             className="pointer-events-auto w-fit cursor-grab active:cursor-grabbing bg-[#0b7d6e] p-4 rounded-2xl rounded-tl-none shadow-lg"
           >
             <div className="relative w-9 h-9 bg-white rounded-xl rounded-tl-none">
