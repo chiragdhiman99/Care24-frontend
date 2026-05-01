@@ -29,6 +29,21 @@
 🔗 **[https://care24-frontend-tjrg.vercel.app/](https://care24-frontend-tjrg.vercel.app/)**
 
 ---
+## Test Credentials
+
+**Family Login**
+Email: singhsanjay@gmail.com
+Password: Cure@1234
+
+**Caregiver Login**
+Email: sharmasunali@gmail.com
+Password: Cure@1234
+
+**Admin Login**
+- for admin login you have enter the url ( "https://care24-frontend-tjrg.vercel.app/admin/dashboard" ) and then you will be redirect to admin login page there you will add these credentials and you will be logged in.
+  
+Email: care24admin@gmail.com
+Password: C@re24!Adm1n*Secure99
 
 ## 👥 User Roles
 
