@@ -1,166 +1,96 @@
 <div align="center">
 
-```
- ██████╗ █████╗ ██████╗ ███████╗    ██████╗ ██╗  ██╗
-██╔════╝██╔══██╗██╔══██╗██╔════╝   ╚════██╗██║  ██║
-██║     ███████║██████╔╝█████╗      █████╔╝███████║
-██║     ██╔══██║██╔══██╗██╔══╝     ██╔═══╝ ╚════██║
-╚██████╗██║  ██║██║  ██║███████╗   ███████╗     ██║
- ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝   ╚══════╝     ╚═╝
-```
+<img src="https://img.shields.io/badge/Care24-Elderly%20Care%20Platform-blue?style=for-the-badge&logo=heart&logoColor=white" alt="Care24 Banner"/>
 
-### 🏥 *Professional Home Healthcare — Delivered with Care*
+# 🏥 Care24 — Elderly Care Management System
 
-<br/>
+### *Connecting Families, Caregivers & Administrators — 24/7*
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-care24--frontend.vercel.app-00C896?style=for-the-badge&logoColor=white)](https://care24-frontend-tjrg.vercel.app)
-[![Backend Repo](https://img.shields.io/badge/⚙️_Backend_Repo-Care24_API-0A0A0A?style=for-the-badge&logo=github&logoColor=white)](https://github.com/chiragdhiman99/Care24-backend)
-[![MIT License](https://img.shields.io/badge/📄_License-MIT-3B82F6?style=for-the-badge)](LICENSE)
-[![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
-
-<br/>
-
-![React](https://img.shields.io/badge/React_18-20232A?style=flat-square&logo=react&logoColor=61DAFB)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
-![Razorpay](https://img.shields.io/badge/Razorpay-0C2451?style=flat-square&logo=razorpay&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-8.0-646CFF?style=flat-square&logo=vite)](https://vitejs.dev/)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind-v4-06B6D4?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
+[![Socket.io](https://img.shields.io/badge/Socket.io-4.x-010101?style=flat-square&logo=socket.io)](https://socket.io/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-000000?style=flat-square&logo=vercel)](https://care24-frontend-tjrg.vercel.app/)
 
 </div>
 
 ---
 
-<br/>
+## 📌 Overview
 
-## 🌟 What is Care24?
+**Care24** is a full-stack elderly care management platform that bridges the gap between **families**, **professional caregivers**, and **administrators**. Families can easily book trusted caregivers, track health records, and communicate in real-time — all in one place.
 
-> **Care24** isn't just a platform — it's a bridge between vulnerability and compassion.
-
-Imagine your elderly parent needs a trained nurse at home. Or a post-surgery patient needs daily wound care. Or a new mother needs a verified caregiver. **Care24 makes that happen in minutes.**
-
-A full-stack home healthcare booking platform where patients can:
-- 🔍 **Discover** verified caregivers filtered by specialization, rating & location
-- 📅 **Book instantly** with real-time slot selection
-- 💳 **Pay securely** via Razorpay with instant confirmation
-- 📧 **Get notified** automatically via email the moment a booking is confirmed
-
-<br/>
+> Built with love for the people who care — and for those being cared for. ❤️
 
 ---
 
-## ✨ Feature Showcase
+## 🌐 Live Demo
 
-<table>
-<tr>
-<td width="50%">
-
-### 🔐 Auth & Security
-- JWT-based login & registration
-- Token stored securely in localStorage
-- Protected routes for booking flow
-- Signature verification on every payment
-
-</td>
-<td width="50%">
-
-### 👩‍⚕️ Caregiver Discovery
-- Browse by service type, city & experience
-- Star-rated profiles with detailed bios
-- Verified badge on all listed caregivers
-- Real-time availability display
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### 💳 Seamless Payments
-- Razorpay Checkout Modal integration
-- Backend order creation + HMAC signature verification
-- Test mode ready with live-switch support
-- Instant booking confirmation on success
-
-</td>
-<td width="50%">
-
-### 📱 World-Class UX
-- Mobile-first Tailwind CSS design
-- Smooth page transitions & loading states
-- Auto-triggered confirmation emails
-- Detailed post-payment summary page
-
-</td>
-</tr>
-</table>
-
-<br/>
+🔗 **[https://care24-frontend-tjrg.vercel.app/](https://care24-frontend-tjrg.vercel.app/)**
 
 ---
 
-## 🛠️ Tech Stack — The Engine Room
+## 👥 User Roles
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                        FRONTEND                             │
-│  ⚛️  React 18 + Vite      ─  Blazing fast dev & build      │
-│  🛣️  React Router v6      ─  Client-side navigation         │
-│  🎨 Tailwind CSS          ─  Utility-first styling          │
-│  🔗 Axios                 ─  HTTP requests to backend       │
-│  🧩 Lucide React          ─  Beautiful icon library         │
-│  💳 Razorpay JS SDK       ─  Payment checkout modal         │
-│  🆔 UUID v4               ─  Unique booking identifiers     │
-│  🚀 Vercel                ─  Zero-config deployment         │
-└─────────────────────────────────────────────────────────────┘
-┌─────────────────────────────────────────────────────────────┐
-│                        BACKEND                              │
-│  🟢 Node.js + Express     ─  REST API server                │
-│  🍃 MongoDB + Mongoose    ─  Database & ODM                 │
-│  🔑 JWT                   ─  Auth tokens                    │
-│  💸 Razorpay Node SDK     ─  Order creation & verification  │
-│  📬 Nodemailer            ─  Email notifications            │
-└─────────────────────────────────────────────────────────────┘
-```
+Care24 supports **3 distinct roles**, each with its own dedicated dashboard and feature set:
 
-<br/>
+| Role | Description |
+|------|-------------|
+| 👨‍👩‍👧 **Family** | Books caregivers, manages health records, chats with caregiver |
+| 🧑‍⚕️ **Caregiver** | Manages bookings, creates profile, communicates with families |
+| 🛡️ **Admin** | Full control — manages users, caregivers, bookings, platform-wide |
 
 ---
 
-## 💳 Payment Flow — Step by Step
+## ✨ Features
 
-```
-                    ┌──────────────────┐
-                    │  User clicks Pay │
-                    └────────┬─────────┘
-                             │
-                    ┌────────▼─────────┐
-                    │  POST /create-   │
-                    │  order (Backend) │◄── Razorpay creates order
-                    └────────┬─────────┘
-                             │
-                    ┌────────▼──────────────────┐
-                    │  Razorpay Checkout Modal  │
-                    │  opens on client side     │
-                    └────────┬──────────────────┘
-                             │
-               ┌─────────────▼────────────────┐
-               │  User completes payment       │
-               │  (UPI / Card / NetBanking)    │
-               └─────────────┬────────────────┘
-                             │
-                    ┌────────▼──────────────┐
-                    │  POST /verify-payment │
-                    │  HMAC Signature Check │◄── Prevents fraud
-                    └────────┬──────────────┘
-                             │
-               ┌─────────────▼──────────────────┐
-               │  ✅ Booking Created in MongoDB  │
-               │  📧 Confirmation Email Sent     │
-               │  🧾 Navigate to Confirm Page    │
-               └────────────────────────────────┘
-```
+### 👨‍👩‍👧 Family / User
+- 📅 **Appointments** — View and track all upcoming & past appointments
+- 🏥 **Health Records** — Add and monitor personal health data
+- 💬 **Real-time Chat** — Message your caregiver directly in-app
+- 🔔 **Live Notifications** — Instant alerts via Socket.io
 
-<br/>
+### 🧑‍⚕️ Caregiver
+- 📋 **Booking Management** — View, accept, or manage assigned bookings
+- 👤 **Profile Setup** — Build a professional caregiver profile to attract families
+- 💬 **Real-time Chat** — Communicate with families seamlessly
+- 🔔 **Live Notifications** — Get notified on new bookings & messages instantly
+
+### 🛡️ Admin
+- 👥 **User Management** — View, manage, activate/deactivate users
+- 🧑‍⚕️ **Caregiver Management** — Approve/manage caregiver applications & profiles
+- 📆 **Booking Oversight** — Monitor and manage all platform bookings
+- 🔔 **Live Notifications** — Platform-wide real-time updates
+
+---
+
+## ⚡ Real-Time Features
+
+Care24 uses **Socket.io** to power live updates across all dashboards:
+
+- 💬 Live chat between families and caregivers
+- 🔔 Real-time in-app notifications (new bookings, messages, status changes)
+- 📡 Instant dashboard updates without page refresh
+
+---
+
+## 🛠️ Tech Stack
+
+| Category | Technology |
+|----------|-----------|
+| **Framework** | React 19 |
+| **Build Tool** | Vite 8 |
+| **Styling** | Tailwind CSS v4 |
+| **Routing** | React Router DOM v6 |
+| **Real-time** | Socket.io Client v4 |
+| **HTTP Client** | Axios |
+| **Animations** | Framer Motion |
+| **Charts** | Recharts |
+| **Icons** | Lucide React |
+| **Notifications** | React Hot Toast + Sonner |
+| **PDF Export** | React to PDF |
+| **Drag & Drop** | React Draggable |
+| **Deployment** | Vercel |
 
 ---
 
@@ -168,189 +98,110 @@ A full-stack home healthcare booking platform where patients can:
 
 ```
 Care24-frontend/
-│
-├── 📂 public/                  # Static assets
-│
-├── 📂 src/
-│   ├── 📂 common/
-│   │   └── 🧭 Navbar.jsx       # Global navigation bar
-│   │
-│   ├── 📂 pages/
-│   │   ├── 🏠 Home.jsx          # Landing page with hero + features
-│   │   ├── 👩‍⚕️ Caregivers.jsx    # Browse & filter caregivers
-│   │   ├── 💳 PaymentSection.jsx       # Booking form + Razorpay trigger
-│   │   └── ✅ PaymentConfirmation.jsx  # Post-payment booking summary
-│   │
-│   ├── ⚛️  App.jsx              # Route definitions
-│   └── 🚀 main.jsx             # React DOM entry point
-│
-├── 📄 index.html
-├── ⚙️  vite.config.js
-├── 🔧 vercel.json              # Vercel SPA redirect config
-└── 📦 package.json
+├── public/                 # Static assets
+├── src/
+│   ├── components/         # Reusable UI components
+│   ├── pages/              # Route-level pages
+│   │   ├── admin/          # Admin dashboard & pages
+│   │   ├── caregiver/      # Caregiver dashboard & pages
+│   │   └── family/         # Family/user dashboard & pages
+│   ├── context/            # React context (auth, socket, etc.)
+│   ├── hooks/              # Custom React hooks
+│   ├── services/           # API service layer (Axios)
+│   └── utils/              # Helper utilities
+├── index.html
+├── package.json
+├── vite.config.js
+└── vercel.json
 ```
-
-<br/>
 
 ---
 
-## 🚀 Getting Started — Run Locally in 60 Seconds
+## 🚀 Getting Started
 
 ### Prerequisites
 
-Make sure you have these installed:
+- Node.js `>= 18`
+- npm or yarn
 
-| Tool | Version |
-|------|---------|
-| Node.js | v18+ |
-| npm / yarn | Latest |
-| Razorpay Account | Test Mode |
-
-### ⚡ Quick Setup
+### Installation
 
 ```bash
-# 1️⃣  Clone the repository
+# 1. Clone the repository
 git clone https://github.com/chiragdhiman99/Care24-frontend.git
 
-# 2️⃣  Jump into the project
+# 2. Navigate to the project directory
 cd Care24-frontend
 
-# 3️⃣  Install all dependencies
+# 3. Install dependencies
 npm install
 
-# 4️⃣  Set up environment variables (see below)
+# 4. Create your environment file
 cp .env.example .env
-
-# 5️⃣  Fire it up 🔥
-npm run dev
 ```
 
-> 🟢 App will be running at **http://localhost:5173**
-
-### 🔑 Environment Variables
+### Environment Variables
 
 Create a `.env` file in the root directory:
 
 ```env
-# ─────────────────────────────────────────
-#  Care24 Frontend — Environment Variables
-# ─────────────────────────────────────────
-
-VITE_RAZORPAY_KEY_ID=rzp_test_your_key_here
-VITE_BACKEND_URL=http://localhost:5000
+VITE_API_BASE_URL=http://localhost:5000/api
+VITE_SOCKET_URL=http://localhost:5000
 ```
 
-> 💡 Get your Razorpay test keys from [dashboard.razorpay.com](https://dashboard.razorpay.com)
-
-<br/>
-
----
-
-## 🔗 API Reference
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/api/auth/register` | Register a new user |
-| `POST` | `/api/auth/login` | Login & receive JWT |
-| `GET` | `/api/caregivers` | Fetch all caregivers |
-| `POST` | `/api/payment/create-order` | Create Razorpay order |
-| `POST` | `/api/payment/verify-payment` | Verify signature & confirm booking |
-
-<br/>
-
----
-
-## 🌐 Deployment
-
-The frontend lives on **Vercel** with auto-deployments triggered on every push to `main`.
+### Running the App
 
 ```bash
+# Development server
+npm run dev
+
 # Build for production
 npm run build
 
-# Preview production build locally
+# Preview production build
 npm run preview
 ```
 
-The `vercel.json` handles SPA routing — all paths redirect to `index.html` so React Router works correctly on Vercel.
-
-```json
-{
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
-  ]
-}
-```
-
-<br/>
+App will be running at **`http://localhost:5173`** 🎉
 
 ---
 
-## 🤝 Backend — The Other Half
+## 🔗 Backend Repository
 
-This frontend is powered by the **Care24 REST API** — a Node.js + Express + MongoDB backend.
+This is the **frontend** of Care24. The backend (Node.js / Express / MongoDB) is maintained separately.
 
-| Feature | Technology |
-|---------|-----------|
-| Authentication | JWT + bcrypt |
-| Database | MongoDB + Mongoose |
-| Payments | Razorpay Node SDK |
-| Emails | Nodemailer + Gmail SMTP |
-| Deployment | Railway / Render |
-
-👉 **[View Backend Repository →](https://github.com/chiragdhiman99/Care24-backend)**
-
-<br/>
+> 🔧 Backend Repo: *(Add your backend repo link here)*
 
 ---
 
----
+## 📸 Screenshots
 
-## 🐛 Found a Bug?
-
-Open an issue and I'll get on it ASAP.
-
-1. 🔍 Search [existing issues](https://github.com/chiragdhiman99/Care24-frontend/issues) first
-2. 🐛 [Open a new issue](https://github.com/chiragdhiman99/Care24-frontend/issues/new) with steps to reproduce
-3. 💡 Or even better — submit a **Pull Request**!
-
-<br/>
+> *(Add screenshots of your dashboards here — Family, Caregiver, Admin)*
 
 ---
 
-## 👨‍💻 About the Author
+## 🤝 Contributing
 
-<div align="center">
+Contributions are welcome! Feel free to open issues or submit pull requests.
 
-**Built with 💙 by Chirag Dhiman**
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-*Full-Stack Developer | Passionate about building products that matter*
+---
 
-[![GitHub](https://img.shields.io/badge/GitHub-chiragdhiman99-0A0A0A?style=for-the-badge&logo=github&logoColor=white)](https://github.com/chiragdhiman99)
+## 📄 License
 
-*If Care24 impressed you, drop a ⭐ — it means the world!*
-
-</div>
-
-<br/>
+This project is licensed under the **MIT License**.
 
 ---
 
 <div align="center">
 
-```
-"Healthcare should be accessible to everyone, everywhere."
-                                        — The Care24 Vision
-```
+Made with ❤️ by [Chirag Dhiman](https://github.com/chiragdhiman99)
 
-**Made with React ⚛️ | Powered by passion 🔥 | Deployed on Vercel 🚀**
+⭐ Star this repo if you found it helpful!
 
-[![Star this repo](https://img.shields.io/github/stars/chiragdhiman99/Care24-frontend?style=social)](https://github.com/chiragdhiman99/Care24-frontend)
-
-</div>
-
----
-
-<div align="center">
-<sub>© 2024 Care24 — Open Source under MIT License</sub>
 </div>
