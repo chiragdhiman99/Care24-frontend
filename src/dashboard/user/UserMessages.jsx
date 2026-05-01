@@ -317,7 +317,11 @@ export default function MessagesTab({ onUnreadChange }) {
             >
               <div className="relative flex-shrink-0">
                 <img
-                  src={`${IMAGE_BASE}${c.image}`}
+                  src={
+                    c?.image?.startsWith("http")
+                      ? c?.image
+                      : `https://care24-backend.onrender.com${c?.image}`
+                  }
                   loading="lazy"
                   decoding="async"
                   className={`w-12 h-12 rounded-full object-cover object-top transition-all duration-200
@@ -412,7 +416,11 @@ export default function MessagesTab({ onUnreadChange }) {
                 style={{ backgroundColor: selectedCaregiver?.color }}
               >
                 <img
-                  src={`${IMAGE_BASE}${selectedCaregiver?.image}`}
+                  src={
+                    selectedCaregiver?.image?.startsWith("http")
+                      ? selectedCaregiver?.image
+                      : `https://care24-backend.onrender.com${selectedCaregiver?.image}`
+                  }
                   loading="lazy"
                   decoding="async"
                   className="w-11 h-11 rounded-full object-cover object-top border-2 border-[#0D6B5E] shadow-md ring-2 ring-[#0D6B5E]/20"
