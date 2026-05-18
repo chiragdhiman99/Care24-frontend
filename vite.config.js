@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
     proxy: {
-      "/api": "https://care24-backend.onrender.com",
+      "/api": "https://care24-backend-1.onrender.com",
     },
   },
   build: {

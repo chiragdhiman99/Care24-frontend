@@ -82,7 +82,7 @@ export default function MessagesTab({ onUnreadChange }) {
 
   const fileInputRef = useRef(null);
 
-  const IMAGE_BASE = "https://care24-backend.onrender.com";
+  const IMAGE_BASE = "https://care24-backend-1.onrender.com";
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -126,7 +126,7 @@ export default function MessagesTab({ onUnreadChange }) {
 
   const handledownload = async (url) => {
     const fileName = url.replace(
-      "https://care24-backend.onrender.com/uploads/",
+      "https://care24-backend-1.onrender.com/uploads/",
       "",
     );
     const response = await fetch(url);
@@ -320,7 +320,7 @@ export default function MessagesTab({ onUnreadChange }) {
                   src={
                     c?.image?.startsWith("http")
                       ? c?.image
-                      : `https://care24-backend.onrender.com${c?.image}`
+                      : `https://care24-backend-1.onrender.com${c?.image}`
                   }
                   loading="lazy"
                   decoding="async"
@@ -419,7 +419,7 @@ export default function MessagesTab({ onUnreadChange }) {
                   src={
                     selectedCaregiver?.image?.startsWith("http")
                       ? selectedCaregiver?.image
-                      : `https://care24-backend.onrender.com${selectedCaregiver?.image}`
+                      : `https://care24-backend-1.onrender.com${selectedCaregiver?.image}`
                   }
                   loading="lazy"
                   decoding="async"

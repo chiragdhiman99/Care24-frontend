@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = "https://care24-backend.onrender.com/api/health-records";
+const API_URL = "https://care24-backend-1.onrender.com/api/health-records";
 
 
 const api = axios.create({

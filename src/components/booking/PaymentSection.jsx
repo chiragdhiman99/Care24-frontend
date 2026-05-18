@@ -27,7 +27,7 @@ const PaymentSection = ({}) => {
   const [paying, setPaying] = useState(false);
   const [paid, setPaid] = useState(false);
 
-  const IMAGE_BASE = "https://care24-backend.onrender.com";
+  const IMAGE_BASE = "https://care24-backend-1.onrender.com";
 
   const genbookingid = () => {
     const date = new Date().toISOString().slice(0, 10).replace(/-/g, "");
@@ -38,7 +38,7 @@ const PaymentSection = ({}) => {
   const handlePay = async () => {
     try {
       const { data } = await axios.post(
-        "https://care24-backend.onrender.com/api/payment/create-order",
+        "https://care24-backend-1.onrender.com/api/payment/create-order",
         {
           amount: Math.round(Number(bookingdata.amount) * 100),
         },
@@ -60,7 +60,7 @@ const PaymentSection = ({}) => {
           try {
             const bookingId = genbookingid();
             await axios.post(
-              "https://care24-backend.onrender.com/api/payment/verify-payment",
+              "https://care24-backend-1.onrender.com/api/payment/verify-payment",
               {
                 razorpay_order_id: response.razorpay_order_id,
                 razorpay_payment_id: response.razorpay_payment_id,

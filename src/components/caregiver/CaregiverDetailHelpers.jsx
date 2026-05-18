@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { MapPin, Clock, Zap, CheckCircle, X } from "lucide-react";
 
 export const IMAGE_BASE =
-  import.meta.env.VITE_API_URL || "https://care24-backend.onrender.com";
+  import.meta.env.VITE_API_URL || "https://care24-backend-1.onrender.com";
 
 export const formatSpec = (s) =>
   s.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());

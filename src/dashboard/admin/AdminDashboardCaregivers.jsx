@@ -11,7 +11,7 @@ export default function AdminDashboardCaregivers() {
 
   const Items_Per_Page = 5;
 
-  const IMAGE_BASE = "https://care24-backend.onrender.com";
+  const IMAGE_BASE = "https://care24-backend-1.onrender.com";
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });

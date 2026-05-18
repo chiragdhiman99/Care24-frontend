@@ -134,7 +134,7 @@ const Receipt = ({ state, receiptRef }) => {
               src={
                 state?.caregiverImage?.startsWith("http")
                   ? state?.caregiverImage
-                  : `https://care24-backend.onrender.com${state?.caregiverImage}`
+                  : `https://care24-backend-1.onrender.com${state?.caregiverImage}`
               }
               alt="Caregiver"
               loading="lazy"
